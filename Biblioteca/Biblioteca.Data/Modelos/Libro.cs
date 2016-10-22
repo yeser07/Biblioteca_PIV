@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Data.Modelos
 {
-    class Libro
+    public class Libro
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+
     }
 }
