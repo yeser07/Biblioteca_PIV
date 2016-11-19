@@ -22,6 +22,16 @@ namespace Biblioteca.Host
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //se llama a los scripts que creamos y al angular.js que se encuentra en la carpeta Scripts
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-route.js",
+                "~/Scripts/app/app.js",
+                "~/Scripts/app/routes.js",
+                "~/Scripts/app/home/home.controller.js"
+
+                ));
         }
     }
 }
