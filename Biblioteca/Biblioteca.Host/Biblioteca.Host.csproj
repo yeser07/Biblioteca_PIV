@@ -217,6 +217,8 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\home\home.template.html" />
+    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
+    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
     <Content Include="Scripts\app\routes.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -250,6 +252,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\app\editorial\editorial.controller.js" />
+    <Content Include="Scripts\app\editorial\editorial.template.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
