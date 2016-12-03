@@ -1,4 +1,4 @@
-﻿<form>
+﻿<form name="editorialForm" novalidate>
     <div class="form-group">
         <label for="editorialId">Id</label>
         <input class="form-control" id="editorialId" ng-model="editorialActual.Id" ng-disabled="true" />
@@ -6,12 +6,26 @@
     </div>
     <div class="form-group">
         <label for="editorialNombre">Nombre</label>
-        <input class="form-control"id="editorialNombre" ng-model="editorialActual.Nombre" />
+
+        <input class="form-control"
+               id="editorialNombre"
+               name="editorialNombre" 
+               ng-model="editorialActual.Nombre"
+               ng-required="{{true}}" 
+              ng-maxlength="25"
+               ng-minlength="3"/>
+
+        <div ng-messages="editorialForm.editorialNombre.$error">
+            <div ng-message="required">El Nombre de la Editorial es Requerido</div>
+            <div ng-message="minlength">El Nombre de la Editorial debe tener un minimo de 3 caracteres</div>
+            <div ng-message="maxlength">El Nombre de la Editorial debe tener un maximo de 25 caracteres</div>
+        </div>
+
     </div>
 
     <div class="form-group">
-        <button ng-click="salvarEditorial()" class="btn btn-default">Salvar</button>
-        <button class="btn btn-default">Cancelar</button>
+        <button  ng-disabled="editorialForm.$invalid" ng-click="salvarEditorial()" class="btn btn-primary">{{accionActual}}</button>
+        <button ng-click="limpiar()" class="btn btn-default">Cancelar</button>
     </div>
 </form>
 
@@ -20,6 +34,8 @@
         <th>Id</th>
         <th>Nombre</th>
         <th></th>
+        <th></th>
+
     </tr>
 
     <tr ng-repeat="editorial in editoriales">
@@ -27,6 +43,10 @@
         <td>{{editorial.Nombre}}</td>
         <td>
            <button ng-click="editar(editorial)" class="btn btn-link">Editar</button>
+        </td>
+
+        <td>
+            <button ng-click="eliminar(editorial)" class="btn btn-link">Eliminar</button>
         </td>
  
        </tr>

@@ -6,10 +6,10 @@
         $scope.editoriales = [];
         $scope.editorialActual = {
             Id: '0',
-            Nombre:' '
+            Nombre:''
 
         };
-        $scope.acccionActual = 'Agregar';
+        $scope.accionActual = 'Agregar';
         $scope.obtenerEditoriales = function () {
             editorialService.obtenerEditoriales()
             .then(function (response) {
@@ -18,7 +18,7 @@
         }
         $scope.salvarEditorial = function () {
 
-            if ($scope.acccionActual === 'Agregar') {
+            if ($scope.accionActual === 'Agregar') {
                 editorialService.agregarEditorial($scope.editorialActual)
             .then(function (response) {
                 $scope.obtenerEditoriales();
@@ -27,7 +27,7 @@
             });
             }
 
-            else if ($scope.acccionActual === 'Editar') {
+            else if ($scope.accionActual === 'Editar') {
                 editorialService.editarEditorial($scope.editorialActual)
          .then(function (response) {
              $scope.obtenerEditoriales();
@@ -36,14 +36,9 @@
          });
 
             }
-
-
-
-
-            
         }
         $scope.limpiar = function () {
-            $scope.acccionActual = 'Agregar';
+            $scope.accionActual = 'Agregar';
             $scope.editorialActual = {
                 Id:'0',
                 Nombre:''
@@ -52,9 +47,27 @@
 
         $scope.editar = function (editorial) {
 
-            $scope.acccionActual = 'Editar';
-            $scope.editorialActual = editorial;
+            $scope.accionActual = 'Editar';
+            $scope.editorialActual = JSON.parse(JSON.stringify(editorial));;
         }
+
+        $scope.eliminar2 = function (editorial) {
+
+            $scope.accionActual = 'Eliminar';
+            $scope.editorialActual = JSON.parse(JSON.stringify(editorial));;
+        }
+
+
+        $scope.eliminar = function (editorial) {
+            editorialService.eliminarEditorial(editorial)
+            .then(function (response) {
+                $scope.obtenerEditoriales();
+                $scope.limpiar();
+                alert('Editorial Eliminado');
+            })
+        }
+
+
 
         $scope.obtenerEditoriales();
 

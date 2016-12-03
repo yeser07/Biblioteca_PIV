@@ -17,7 +17,7 @@
                 return $http.put(miConfiguracion.urlBackend + 'api/Editorial/' + editorial.Id, editorial);
             }
 
-            function eliminarEditorial(id) {
+            function eliminarEditorial(editorial) {
                 return $http.delete(miConfiguracion.urlBackend + 'api/Editorial/' + editorial.Id);
             }
 
