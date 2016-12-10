@@ -159,6 +159,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\app\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -220,6 +221,9 @@
     <Content Include="Scripts\app\editorial\editorial.service.js" />
     <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\home\home.template.html" />
+    <Content Include="Scripts\app\libro\libro.controller.js" />
+    <Content Include="Scripts\app\libro\libro.service.js" />
+    <Content Include="Scripts\app\libro\libro.template.html" />
     <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
     <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
     <Content Include="Scripts\app\routes.js" />
