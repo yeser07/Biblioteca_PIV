@@ -20,6 +20,9 @@
             function eliminarLibro(libro) {
                 return $http.delete(miConfiguracion.urlBackend + 'api/Libro/' + libro.Id);
             }
+            function agregarEditorial(libro, editorial) {
+                return $http.put(miConfiguracion.urlBackend + 'api/libro/' + libro.Id + '/editorial/' + editorial.Id);
+            }
 
 
 
@@ -27,7 +30,8 @@
                 obtenerLibros: obtenerLibros,
                 agregarLibro: agregarLibro,
                 editarLibro: editarLibro,
-                eliminarLibro:eliminarLibro
+                eliminarLibro: eliminarLibro,
+                agregarEditorial:agregarEditorial
             }
         }
     ]);

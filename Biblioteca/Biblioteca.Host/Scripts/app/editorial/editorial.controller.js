@@ -64,7 +64,9 @@
                 $scope.obtenerEditoriales();
                 $scope.limpiar();
                 alert('Editorial Eliminado');
-            })
+            }, function (error) {
+                alert('Error Eliminando Editorial!');
+            });
         }
 
 

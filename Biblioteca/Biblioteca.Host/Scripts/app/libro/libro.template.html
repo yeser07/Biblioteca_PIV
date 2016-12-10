@@ -23,6 +23,7 @@
         <div class="form-group">
             <label for="libroAño">Año</label>
             <input class="form-control"
+                   type="number"
                    id="libroAño"
                    name="libroAño"
                    ng-model="libroActual.Anio"
@@ -35,7 +36,16 @@
             </div>
         </div>
 
-
+        <div class="form-group">
+            <label>Editoriales</label>
+            <select name="libroEditorial"
+             class="form-control" ng-model="editorialSeleccionada"
+                    ng-options="editorial.Nombre for editorial in editoriales"
+                    required>
+            </select>
+            <div ng-messages="libro.Form.libroEditorial.$error">
+            <div ng-message="required">La Editorial de libro es requerido</div>
+        </div>
     </div>
 
     <div class="form-group">
@@ -49,7 +59,7 @@
         <th>Id</th>
         <th>Nombre</th>
         <th>Año</th>
-        <th></th>
+        <th>Editorial</th>
         <th></th>
         <th></th>
 
@@ -59,6 +69,7 @@
         <td>{{libro.Id}}</td>
         <td>{{libro.Nombre}}</td>
         <td>{{libro.Anio}}</td>
+        <td>{{libro.Editorial.Nombre}}</td>
         <td>
            <button ng-click="editar(libro)" class="btn btn-link">Editar</button>
         </td>
