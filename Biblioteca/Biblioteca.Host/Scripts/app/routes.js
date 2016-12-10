@@ -18,24 +18,4 @@ function ($routerProvider) {
     })
 },
 
-/*function ($routerProvider) {
-    $routerProvider.when('/', {
-        templateUrl: "Scripts/app/home/home.template.html",
-        controller:"homeController"
-
-    })
-    .when('/libros', {
-        templateUrl: 'Scripts/app/libro/libro.template.html',
-        controller:"libroController"
-    })
-
-    .otherwise({
-        redirectTo:'/'
-    })
-
-}
-
-*/
-
-
 ]);
